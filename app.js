@@ -28,6 +28,7 @@ router.post('/users', async (req, res) => {
   // 3. nickname에 해당하는 사용자가 있는가 - 완료
   // 4. DB에 데이터를 삽입
 
+  
   // 회원 가입을 받을 때 비밀번호를 한 번 더 확인하기
   if (password !== confirmPassword) {
     res.status(400).json({
