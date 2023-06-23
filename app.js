@@ -208,7 +208,7 @@ router.delete("/contents/detail/:contentId", authMiddleware, async (req, res) =>
 
 //댓글목록 조회
 router.get("/contents/:contentId/detail/comments", async (req, res) => {
-    //코멘트를 전부 가져온다            생성 시간 기준으로: 내림차순 정렬(-1)
+    // 컨텐츠에 종속된 코멘트를 전부 가져온다        생성 시간 기준으로: 내림차순 정렬(-1)
     const comments = await Comment.find({}).sort({ createdAt: -1 });
     res.json({ comments });
 });
